@@ -1,0 +1,15 @@
+:host {
+  width: 100%;
+    display: block; /* Ensures the host element takes the full height */
+    height: 100vh; /* Full viewport height */
+    background-image: url('../../assets/home.jpg');
+    background-size: 120%; /* Cover the entire area */
+    background-position: center;
+    color: white; /* Text color */
+    display: flex; /* Flexbox for centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Optional text shadow for readability */
+    overflow-x: hidden;
+  }
+  

@@ -1,0 +1,218 @@
+<div class="container">
+  <h2>RESUME BUILDER</h2>
+  <hr>
+
+  <!-- page 1 personal details -->
+  <div class="open-card-BG" *ngIf="currentView === 'regView1'">
+      <h2>Personal Details</h2>
+      <form [formGroup]="personalDetailsForm">
+          <!-- NAME -->
+          <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" formControlName="fullName"
+                  class="form-control" required>
+                  <div *ngIf="personalDetailsForm.get('fullname')?.invalid && personalDetailsForm.get('fullname')?.touched" class="text-danger">
+                      Name is required.
+                  </div>
+          </div>
+          <!-- DOB -->
+          <div class="form-group" >
+              <label for="name">DOB</label>
+              <input type="date" id="dob" formControlName="dob"
+                  class="form-control" required>
+                  <div *ngIf="personalDetailsForm.get('dob')?.invalid && personalDetailsForm.get('dob')?.touched" class="text-danger">
+                      DOB is required.
+                  </div>
+          </div>
+          <!-- AGE -->
+          <div class="form-group" >
+              <label for="name">Age</label>
+              <input type="text" id="age" formControlName="age"
+                  class="form-control" required><div *ngIf="personalDetailsForm.get('age')?.invalid && personalDetailsForm.get('age')?.touched" class="text-danger">
+                      Age is required.
+                  </div>
+          </div>
+          
+          <!-- QUALIFICATION -->
+          <div class="form-group" >
+              <label for="name">Qualification</label>
+              <input type="text" id="qualification" formControlName="qualification"
+                  class="form-control" required>
+                  <div *ngIf="personalDetailsForm.get('qualification')?.invalid && personalDetailsForm.get('qualification')?.touched" class="text-danger">
+                      Qualification is required.
+                  </div>
+          </div>                        
+          <!-- EMAIL -->
+          <div class="form-group" >
+              <label for="email">Email</label>
+              <input type="email" id="email" formControlName="email"
+                  class="form-control" required>
+                  <div *ngIf="personalDetailsForm.get('email')?.invalid && personalDetailsForm.get('email')?.touched" class="text-danger">
+                      E-Mail is required.
+                  </div>
+          </div>
+          <!-- MOBILE -->
+          <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="number" id="phone" formControlName="phoneNumber"
+                  class="form-control" required>
+                  <div *ngIf="personalDetailsForm.get('phoneNumber')?.invalid && personalDetailsForm.get('phoneNumber')?.touched" class="text-danger">
+                      Phone Number is required.
+                  </div>
+          </div>
+          <!-- ADDRESS -->
+          <div class="form-group" >
+              <label for="name">Address</label>
+              <textarea id="address" formControlName="address"
+              class="form-control" required></textarea>
+              <div *ngIf="personalDetailsForm.get('address')?.invalid && personalDetailsForm.get('address')?.touched" class="text-danger">
+                  Address is required.
+              </div>
+          </div>
+          
+      </form>
+      <button class="btn btn-primary" style="margin-left: 90%;" type="submit" (click)="onsubmit1()">Next</button>
+  </div>
+
+
+
+  
+  <!-- page 2  Educational Details-->
+  <div class="open-card-BG" *ngIf="currentView === 'regView2'">
+      <h2>Educational Details</h2>
+      <form [formGroup]="educationDetailsForm">
+          <table>
+          <tr>
+          <td>
+              <div class="form-group">
+                  <label for="institution">Institution Name</label>
+                  <input type="text" id="institution" formControlName="institution" class="form-control" required>
+                  <div *ngIf="educationDetailsForm.get('institution')?.invalid && educationDetailsForm.get('institution')?.touched" class="text-danger">
+                      Institution Name is required.
+                  </div>
+              </div>
+              
+          </td>
+          <td>
+              <div class="form-group">
+                  <label for="degree">Highest Degree</label>
+                  <input type="text" id="degree" formControlName="degree" class="form-control" required>
+                  <div *ngIf="educationDetailsForm.get('degree')?.invalid && educationDetailsForm.get('degree')?.touched" class="text-danger">
+                      Degree is required.
+                  </div>
+              </div>
+              
+              
+          </td>
+          <td>
+              <div class="form-group">
+                  <label for="graduationYear">Graduation Year</label>
+                  <input type="text" id="graduationYear"
+                      formControlName="graduationYear" class="form-control" required>
+                      <div *ngIf="educationDetailsForm.get('graduationYear')?.invalid && educationDetailsForm.get('graduationYear')?.touched" class="text-danger">
+                          Graduation Year required.
+                      </div>
+              </div>
+          </td>
+          <td>
+              <div class="form-group">
+                  <label for="Percentage">Percentage</label>
+                  <input type="number" id="Percentage"
+                      formControlName="Percentage" class="form-control" required>
+                      <div *ngIf="educationDetailsForm.get('Percentage')?.invalid && educationDetailsForm.get('Percentage')?.touched" class="text-danger">
+                          Degree is required.
+                      </div>
+              </div>
+          </td>
+          </tr>
+          </table>
+          <hr>
+          <table>
+          <h2 class="col-sm-12" style="margin-left: 25%;">Project Details</h2>
+          <tr>
+              
+              <td>
+                  <div class="form-group">
+                      <label for="ProjectTitle">Project Title</label>
+                      <input type="text" id="ProjectTitle"
+                          formControlName="ProjectTitle" class="form-control" required>
+                  </div>
+                  <div *ngIf="educationDetailsForm.get('ProjectTitle')?.invalid && educationDetailsForm.get('ProjectTitle')?.touched" class="text-danger">
+                      Project Title is required.
+                  </div>
+              </td>
+              <td>
+                  <div class="form-group">
+                      <label for="ProjectDescription">Project Description</label>
+                      <textarea id="ProjectDescription" formControlName="ProjectDescription"
+                      class="form-control" required></textarea>
+                  </div>
+                  <div *ngIf="educationDetailsForm.get('ProjectDescription')?.invalid && educationDetailsForm.get('ProjectDescription')?.touched" class="text-danger">
+                      Project Description is required.
+                  </div>
+              </td>
+          </tr>
+      </table>
+      </form>
+      <button class="btn btn-primary" style="margin-left: 00%;"type="submit"
+          (click)="navigateTo('regView1')">Previous</button>
+          <button class="btn btn-primary" style="margin-left: 90%;" type="submit" (click)="onsubmit()">Next</button>
+
+  </div>
+
+  <!-- page 3 Resume Preview -->
+  <div class="open-card-BG" *ngIf="currentView === 'regView3'" id="resumePreview">
+      <h2 class="text-center" style="margin-left: 0%;">Resume Preview</h2>
+      <hr>
+  
+      <div class="row">
+          <div class="col-md-12">
+              <h4>Personal Details</h4>
+              <p><strong>Name:</strong> {{ personalDetailsForm.value.fullName }}</p>
+              <p><strong>Email:</strong> {{ personalDetailsForm.value.email }}</p>
+              <p><strong>Phone:</strong> {{ personalDetailsForm.value.phoneNumber }}</p>
+              <p><strong>Address:</strong> {{ personalDetailsForm.value.address }}</p>
+              <p><strong>Date of Birth:</strong> {{ personalDetailsForm.value.dob  }}</p>
+          </div>
+      </div>
+  
+      <hr>
+  
+      <div class="row">
+          <div class="col-md-12">
+              <h4>Objective</h4>
+              <p>Your objective goes here. (Predefined or user-defined)</p>
+          </div>
+      </div>
+  
+      <hr>
+  
+      <div class="row">
+          <div class="col-md-12">
+              <h4>Educational Background</h4>
+              <p><strong>Degree:</strong> {{ educationDetailsForm.value.degree }}</p>
+              <p><strong>Institution:</strong> {{ educationDetailsForm.value.institution }}</p>
+              <p><strong>Graduation Year:</strong> {{ educationDetailsForm.value.graduationYear }}</p>
+              <p><strong>Percentage:</strong> {{ educationDetailsForm.value.Percentage }}%</p>
+          </div>
+      </div>
+  
+      <hr>
+  
+      <div class="row">
+          <div class="col-md-12">
+              <h4>Project Details</h4>
+              <p><strong>Project Title:</strong> {{ educationDetailsForm.value.ProjectTitle }}</p>
+              <p><strong>Project Description:</strong> {{ educationDetailsForm.value.ProjectDescription }}</p>
+          </div>
+      </div>
+  
+      <hr>
+  
+      <div class="d-flex justify-content-between mt-4">
+          <button class="btn btn-primary" (click)="navigateTo('regView2')">Previous</button>
+          <button class="btn btn-success" (click)="downloadPDF()">Download PDF</button>
+      </div>
+  </div>
+  
+</div>

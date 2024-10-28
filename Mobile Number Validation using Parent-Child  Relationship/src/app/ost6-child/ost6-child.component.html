@@ -1,0 +1,52 @@
+<div
+  class="w-100 py-5 d-flex justify-content-center align-items-center flex-column"
+>
+  <form
+    class="col-6 d-flex flex-column justify-content-between"
+    (submit)="onSubmit()"
+  >
+    <div class="row mb-3">
+      <div class="col-2">
+        <select class="form-select" (change)="findData($event.target)">
+          <option value="-1">Code</option>
+          <option *ngFor="let data of for_length; index as i" [value]="i">
+            {{ data.phone }}
+          </option>
+        </select>
+      </div>
+      <div class="col-10">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">{{ contry }}</span>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Mobile Number *"
+            [(ngModel)]="mobile"
+            name="mobile"
+          />
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              {{ phoneLength.min }}
+            </span>
+          </div>
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">{{
+              phoneLength.max
+            }}</span>
+          </div>
+        </div>
+        <span *ngIf="error" class="text-danger"
+          >Mobile Number needs Minimum {{ phoneLength.min }} and Maximum
+          {{ phoneLength.max }} Numbers</span
+        >
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div class="col-5 d-flex flex-column align-items-center my-3">
+    <img class="col-5 my-2" [src]="country_flag" [alt]="country_name" />
+    <span class="display-6">{{ country_name }}</span>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <h2>DYNAMIC TABLE</h2>
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of productList; let i = index">
+              <td>
+                  <select class="form-select" [(ngModel)]="item.product">
+                      <option value="">Select a product</option>
+                      <option *ngFor="let product of productOptions" [value]="product">{{ product }}</option>
+                  </select>
+              </td>
+              <td>
+                  <input type="number" class="form-control"
+                      [(ngModel)]="item.quantity" min="1" />
+              </td>
+              <td>
+                  <button class="btn btn-danger"
+                      (click)="removeItem(i)">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+  <button class="btn btn-primary" style="margin-left: 30%;"
+      (click)="addProduct()">ADD</button>
+  <button class="btn btn-success" style="margin-left: 2%;"
+      (click)="submit()">SUBMIT</button>
+
+  <div *ngIf="submitted" class="mt-4">
+      <p>Total Products: {{ productList.length }}</p>
+      <p>Total Quantity: {{ totalQuantity }}</p>
+  </div>
+</div>

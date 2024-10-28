@@ -1,0 +1,35 @@
+<h2 class="text-center text-primary py-3">Student Management System</h2>
+<form class="py-3 px-5 d-flex flex-wrap gap-4" (submit)="submitDetail()" >
+  <input class="form-control w-25" type="text" minlength="8" maxlength="8" name="rollno" placeholder="Enter the Roll Number" [(ngModel)]="data.rollno" required/>
+  <input class="form-control w-25" type="text" placeholder="Enter the name" name="name" [(ngModel)]="data.name" required/>
+  <input class="form-control w-25" type="number" placeholder="Mark 1" name="mark1" min="0" max="100" [(ngModel)]="data.mark1" required />
+  <input class="form-control w-25" type="number" placeholder="Mark 2" name="mark2" min="0" max="100" [(ngModel)]="data.mark2" required />
+  <input class="form-control w-25" type="number" placeholder="Mark 3" name="mark3" min="0" max="100" [(ngModel)]="data.mark3" required />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div class="w-full py-3 px-4">
+  <table class="table">
+    <thead>
+     <tr>
+      <th>Rollno</th>
+      <th>Name</th>
+      <th>Mark 1</th>
+      <th>Mark 2</th>
+      <th>Mark 3</th>
+      <th>Total</th>
+      <th>Average</th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td> {{student.rollno}}</td>
+        <td> {{student.name}}</td>
+        <td> {{student.mark1}}</td>
+        <td> {{student.mark2}}</td>
+        <td> {{student.mark3}}</td>
+        <td> {{student.total}}</td>
+        <td> {{student.avg}}%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

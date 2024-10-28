@@ -1,0 +1,20 @@
+.container
+{
+
+    background-color: aliceblue;
+    justify-content: center;
+    max-width: 2000px;
+    width:500px;
+    height: 75%;
+    padding: 25px;
+    margin-left: 100px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.4);
+    margin-bottom: -150px;
+}
+.container h2
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 1000;
+   margin-left: 20%;
+   margin-top: 0%;
+}

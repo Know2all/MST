@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000; /* Bright blue background */
+  color: white;
+  padding: 15px 50px; /* Padding for top and bottom only */
+  display: flex;
+  justify-content: left; /* Center all items */
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background-color 0.4s ease; /* Smooth transition */
+}
+
+.navbar.shrink {
+  background-color: #0056b3; /* Darker blue on scroll */
+}
+
+.navbar h1 {
+  font-size: 26px;
+  margin: 0;
+  transition: font-size 0.4s ease; /* Smooth transition for font size */
+}
+
+.navbar .links {
+  display: flex;
+  gap: 10px; /* Reduced space between links */
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px; /* Padding for clickable area */
+  border-radius: 5px; /* Rounded corners */
+  position: relative; /* Needed for the pseudo-element */
+  overflow: hidden; /* Hide the pseudo-element overflow */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px; /* Underline thickness */
+  background-color: white; /* Underline color */
+  transition: width 0.4s ease, left 0.4s ease; /* Animate width and position */
+}
+
+.navbar a:hover::after {
+  width: 100%; /* Expand underline on hover */
+  left: 0; /* Align left */
+}
+
+.navbar a:hover {
+  color: #FFD700; /* Gold color on hover */
+}
+
+router-outlet {
+  margin-top: 70px; /* Adjust based on navbar height */
+  padding: 20px; /* Add padding to the content area */
+}

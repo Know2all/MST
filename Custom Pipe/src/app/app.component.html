@@ -1,0 +1,9 @@
+<div class="week-picker-container">
+  <label for="datePicker">Select Date:</label>
+  <input type="date" [(ngModel)]="selectedDate" (change)="updateWeek()" id="datePicker">
+  
+  <div class="week-display">
+    <p><strong>Start of the Week:</strong> {{ startOfWeek | date:'fullDate' }}</p>
+    <p><strong>End of the Week:</strong> {{ endOfTheWeek | date:'fullDate' }}</p>
+  </div>
+</div>

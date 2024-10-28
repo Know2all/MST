@@ -1,0 +1,11 @@
+<div class="container vh-100 py-5">
+    <div
+      class="w-100 h-100 px-3 bg-warning-subtle d-flex flex-column justify-content-center align-items-center rounded-3"
+    >
+      <span class="display-1">I am Parent: {{ mobile }}</span>
+      <div class="w-100 bg-primary-subtle m-2 rounded-3">
+        <app-ost6-child (setMobile)="getMobile($event)"></app-ost6-child>
+      </div>
+    </div>
+  </div>
+  

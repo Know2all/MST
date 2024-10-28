@@ -1,0 +1,17 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+form{
+    width: 700px;
+    padding: 60px 20px;
+    background-color: white;
+    height: auto;
+    margin-top: 40px;
+}
